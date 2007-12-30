@@ -29,7 +29,7 @@ namespace :rorails do
   end
 
   desc "restart merb with 3 mongrels in production mode"
-  task :restart_mongrels do
+  task :restart_merb do
     invoke_command "sh -c 'cd #{current_path} && merb -k all && merb -c 3 -e production'"
   end
 
@@ -45,8 +45,6 @@ namespace :deploy do
 
 end
 
-# after Capistrano magic, copy configs to the right place, 
-# restart mongrels and cleanup older code versions
-after "deploy:update",  "rorails:copy_config_files"
-after "rorails:copy_config_files", "deploy:cleanup"
-after "deploy:restart", "rorails:restart_mongrels"
+# after Capistrano magic restart merb
+after "deploy:restart", "rorails:restart_merb"
+after "rorails:restart_merb", "deploy:cleanup"
