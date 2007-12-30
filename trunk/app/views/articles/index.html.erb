@@ -1,8 +1,15 @@
 <% for article in @articles %>
-  <h2><%= h article.title %> <%= link_to 'delete', "articles/destroy/#{article.id}" %></h2>
+  <h2><%= h article.title %> 
+  <% if authenticated? -%>
+    <%= link_to 'delete', "articles/destroy/#{article.id}" %>
+    <%= link_to 'edit', "articles/edit/#{article.id}" %>
+  </h2>
+  <% end -%>
   <p><%= h article.content %></p>
 <% end %>
 
+<% if authenticated? -%>
 <p>
   <%= link_to 'Add new article', action="/articles/new" %>
 </p>
+<% end -%>

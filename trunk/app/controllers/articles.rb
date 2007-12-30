@@ -1,5 +1,7 @@
 class Articles < Application
   provides :xml, :js, :yaml
+  # all actions except index and show must require authentication
+  before :basic_authentication, :exclude => [:index, :show]
   
   def index
     @articles = Article.find(:all)
@@ -35,7 +37,7 @@ class Articles < Application
   def update
     @article = Article.find(params[:id])
     if @article.update_attributes(params[:article])
-      redirect url(:article, @article)
+      redirect '/articles'
     else
       raise BadRequest
     end

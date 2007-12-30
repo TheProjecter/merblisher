@@ -31,6 +31,11 @@ namespace :rorails do
   task :restart_merb do
     invoke_command "sh -c 'cd #{current_path} && merb -k all && merb -c 3 -e production'"
   end
+  
+  desc "copy config files into the app"
+  task :copy_config_files do
+    run "cp #{shared_path}/config/* #{current_path}/config/"
+  end
 
 end
 
@@ -44,6 +49,7 @@ namespace :deploy do
 
 end
 
-# after Capistrano magic restart merb
+# after Capistrano magic, copy config files and restart merb
+after "deploy:update",  "rorails:copy_config_files"
 after "deploy:restart", "rorails:restart_merb"
 after "rorails:restart_merb", "deploy:cleanup"

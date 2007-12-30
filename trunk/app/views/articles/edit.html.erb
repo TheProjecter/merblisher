@@ -1,1 +1,7 @@
-Edit for Articles
+<form action="/articles/update/<%= @article.id %>" method="post">
+<%= partial :article %>
+</form>
+
+<p>
+	<%= link_to "Back to articles", "/articles" %>
+</p>
