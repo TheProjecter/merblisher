@@ -9,11 +9,10 @@ set :deploy_to, "/var/www/apps/#{application}"
 set :deploy_via, :remote_cache
 
 # for http pulls from subversion server
-set :scm_username, "sergiutruta"
 set :runner, user
 
 # roles
-set :domain, "akasha-labs.ro"
+set :domain, "www.akasha-labs.ro"
 role :app, domain
 role :web, domain
 role :db,  domain, :primary => true
