@@ -1,0 +1,13 @@
+<p>
+  <label for="title">Title</label><br />
+  <%= control_for @article, :title, :text, :size => 51 %>
+</p>
+
+<p>
+  <label for="content">Content</label><br />
+  <%= control_for @article, :content, :textarea, :rows => 20, :cols => 50 %>
+</p>
+
+<p>
+  <button type="submit" name="Submit" value="Submit">Save article</button>
+</p>
