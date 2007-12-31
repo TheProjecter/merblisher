@@ -31,7 +31,7 @@ class Articles < Application
     @article = Article.new(params[:article])
     @article.category_id = params[:category][:id]
     if @article.save
-      redirect '/articles'
+      redirect url(:action => "index")
     else
       render :action => :new
     end
@@ -48,7 +48,7 @@ class Articles < Application
     @article = Article.find(params[:id])
     @article.category_id = params[:category][:id]
     if @article.update_attributes(params[:article])
-      redirect '/articles'
+      redirect url(:action => "index")
     else
       raise BadRequest
     end
@@ -57,7 +57,7 @@ class Articles < Application
   def destroy
     @article = Article.find(params[:id])
     if @article.destroy
-      redirect '/articles'
+      redirect url(:action => "index")
     else
       raise BadRequest
     end

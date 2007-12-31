@@ -10,7 +10,7 @@
 
 <p>
   <label for="content">Category</label><br />
-  <%= control_for @category, :id, :select, { :text_method => :name, :collection => Category.find(:all) } %>
+  <%= control_for @article.category, :id, :select, { :text_method => :name, :collection => Category.find(:all) } %>
 </p>
 
 <p>

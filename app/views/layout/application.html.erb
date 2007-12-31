@@ -9,7 +9,7 @@
 	<div id="header">
 		<ul>
 			<% for category in session[:categories] -%>
-			  <li><%= link_to category.to_s, url(:controller => 'articles', :category => category) %></li>
+			  <li><%= link_to category.to_s, url(:controller => 'articles', :action => 'index', :category => category) %></li>
 			<% end -%>
 		</ul>
 	</div>
