@@ -11,7 +11,7 @@ class Articles < Application
     # select requested category
     category = Category.find(:first, :conditions => ["name = ?", params[:category] || 'home'], :include => :articles) 
     # fetch articles for this category
-    @articles = category.articles   
+    @articles = Article.find(:all, :conditions => ["category_id = ?", category.id])
     # now we can call render
     render @articles
   end
