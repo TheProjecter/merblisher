@@ -9,7 +9,7 @@ class Articles < Application
         session[:categories] = Category.find(:all).collect(&:name)
     end
     # select requested category
-    category = Category.find(:first, :conditions => ["name = ?", params[:category] || 'home'], :include => :articles) 
+    category = Category.find(:first, :conditions => ["name = ?", params[:category] || Category.find(:first).name], :include => :articles) 
     # fetch articles for this category
     @articles = Article.find(:all, :conditions => ["category_id = ?", category.id])
     # now we can call render
