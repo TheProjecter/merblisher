@@ -1,8 +1,10 @@
 ---
 # This is a sample database file for the ActiveRecord ORM
 :development: &defaults
-  :adapter: sqlite3
-  :database: db/development.db
+  :adapter: mysql
+  :database: merblisher_development
+  :user: root
+  :password:
 
 :test:
   <<: *defaults

@@ -9,5 +9,10 @@
 </p>
 
 <p>
-  <button type="submit" name="Submit" value="Submit">Save article</button>
+  <label for="content">Category</label><br />
+  <%= control_for @category, :id, :select, { :text_method => :name, :collection => Category.find(:all) } %>
+</p>
+
+<p>
+  <button type="submit" name="Submit" value="Submit">&nbsp;Save article&nbsp;</button>
 </p>
