@@ -5,7 +5,7 @@
     <%= link_to 'edit', url(:controller => 'articles', :action => 'edit', :id => article.id) %>
   </h2>
   <% end -%>
-  <p><%= h article.content %></p>
+  <p><%=  RedCloth.new(article.content).to_html %></p>
 <% end %>
 
 <% if authenticated? -%>

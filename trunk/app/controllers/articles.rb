@@ -1,3 +1,5 @@
+require 'RedCloth'
+
 class Articles < Application
   provides :xml, :js, :yaml
   # all actions except index and show must require authentication
