@@ -10,6 +10,8 @@
 
 <% if authenticated? -%>
 <p>
-  <%= link_to 'Add new article', action="/articles/new" %>
+  <%= link_to 'Add new article', action="/articles/new" %>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <%= link_to 'Admin', action="/admin" %>
 </p>
+
 <% end -%>

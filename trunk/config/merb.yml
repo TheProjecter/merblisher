@@ -60,7 +60,7 @@
 
 # Uncomment this if you want to force merb to show full InternalServerError
 # details, even when in production mode
-#:exception_details: true
+:exception_details: true
 
 # It is often useful to use a differant layout from 'application' for errors
 # set this to the layout template (or :none) that you want to use by default

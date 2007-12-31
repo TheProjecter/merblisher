@@ -6,9 +6,19 @@
     <link rel="stylesheet" href="/stylesheets/merblisher.css" type="text/css" media="screen" charset="utf-8">
   </head>
   <body>
+	<div id="header">
+		<ul>
+			<% for category in session[:categories] -%>
+			  <li><%= link_to category.to_s, url(:controller => 'articles', :category => category) %></li>
+			<% end -%>
+		</ul>
+	</div>
 	<div id="container">
-	  <h1>Merblisher - a lightweight publishing tool using Merb</h1>
+	  <h1><%= session[:title] || "Merblisher - a lightweight publishing tool using Merb" %></h1>
       <%= catch_content :layout %>
+	</div>
+	<div id="footer">
+		&copy;&nbsp;<%= link_to "Akasha-Labs.ro", "http://akasha-labs.ro" %>
 	</div>
   </body>
 </html>

@@ -1,0 +1,11 @@
+<% for category in @categories %>
+  <p><%= h category.name %> 
+    <%= link_to 'delete', "categories/destroy/#{category.id}" %>
+    <%= link_to 'edit', "categories/edit/#{category.id}" %>
+  </p>
+<% end %>
+
+<p>
+  <%= link_to 'Add new category', action="/categories/new" %>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <%= link_to 'Back to admin', action="/admin" %>
+</p>

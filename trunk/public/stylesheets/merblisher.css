@@ -15,14 +15,40 @@ html {
   margin-bottom: 1px;
 }
 
+#header{
+  text-align: right;
+  padding-top: 1em;
+  margin-right: 38px;
+}
+
+#header ul{
+  list-style: none;
+}
+
+#header li{
+  display: inline;
+}
+
+#header li a{
+  color: #222;
+  font-size: 14px;
+  padding: 1em;	
+}
+
+#header li a:hover{
+  background: #333;
+  color: #eee;
+  text-decoration: none;
+}
+
 #container {
   width: 90%;
-  padding: 2em 1em 1em;
+  padding: 1em;
   text-align: left;
   background-color: #fff;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 2em;
+  margin-top: 1em;
   border: 2px solid #ddd;
 }
 
@@ -67,4 +93,14 @@ label{
   font-size: 14px;
   font-weight: bold;
   color: #666;  	
+}
+
+#footer{
+	padding: 1em;
+	text-align: center;
+}
+
+#footer a{
+	color: #333;
+	font-size: 14px;
 }
