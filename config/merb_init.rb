@@ -14,3 +14,7 @@ Merb::Server.load_application
 
 # Load environment-specific configuration
 require File.join(MERB_ROOT, 'config', 'environments', MERB_ENV)
+
+# in order to load successfully RedCloth, we have to require first the rubygems
+require 'rubygems'
+require 'redcloth'
