@@ -9,7 +9,7 @@
 </p>
 
 <p>
-  <label for="content">Category</label><br />
+  <label for="Category">Category</label><br />
   <%= control_for @article.category, :id, :select, { :text_method => :name, :collection => Category.find(:all) } %>
 </p>
 

@@ -1,7 +1,7 @@
-<form action="/articles/update/<%= @article.id %>" method="post">
+<form action="<%= url(:controller => 'articles', :action => 'update', :id => @article.id) %>" method="post">
 <%= partial :article %>
 </form>
 
 <p>
-	<%= link_to "Back to articles", "/articles" %>
+	<%= link_to "Back to articles", url(:controller => "articles") %>
 </p>

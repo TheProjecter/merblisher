@@ -1,7 +1,7 @@
-<form action="/categories/update/<%= @category.id %>" method="post">
+<form action="<%= url(:controller => 'categories', :action => 'update', :id => @category.id) %>" method="post">
 <%= partial :category %>
 </form>
 
 <p>
-	<%= link_to "Back to categories", "/categories" %>
+	<%= link_to "Back to categories", url(:controller => "categories") %>
 </p>

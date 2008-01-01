@@ -1,0 +1,7 @@
+<form action="<%= url(:controller => 'globals', :action => 'update', :id => @global.id) %>" method="post">
+<%= partial :global %>
+</form>
+
+<p>
+	<%= link_to "Back to globals", url(:controller => "globals") %>
+</p>

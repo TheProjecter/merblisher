@@ -24,6 +24,7 @@ Merb::Router.prepare do |r|
   # RESTful routes
   r.resources :articles
   r.resources :categories
+  r.resources :globals
   
   r.match('articles/:category').to(:controller => 'articles', :action => 'index')
   
