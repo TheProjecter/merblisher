@@ -4,10 +4,7 @@ class Articles < Application
   before :basic_authentication, :exclude => [:index, :show]
   
   def index
-    unless session[:categories]
-       # as this is the first execute action, let's load the menu here
-        session[:categories] = Category.find(:all).collect(&:name)
-    end
+    setup_global_data
     # select requested category
     category = Category.find(:first, :conditions => ["name = ?", params[:category] || Category.find(:first).name], :include => :articles) 
     # fetch articles for this category
@@ -60,6 +57,22 @@ class Articles < Application
       redirect url(:action => "index")
     else
       raise BadRequest
+    end
+  end
+  
+private
+
+  # 1. setup site menu by pulling out the categories
+  # 2. setup the globals like site title
+  def setup_global_data
+    unless session[:categories]
+       # as this is the first execute action, let's load the menu here
+        session[:categories] = Category.find(:all).collect(&:name)
+    end
+    unless session[:title]
+       # at the first execution, we read this from the database
+       global = Global.find(:first, :conditions => ["gkey = 'title'"])
+       session[:title] = global.gvalue if global
     end
   end
   

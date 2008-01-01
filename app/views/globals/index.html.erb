@@ -1,0 +1,20 @@
+<table>
+	<tr>
+		<th>Key</th>
+		<th>Value</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+<% for global in @globals %>
+  <tr>
+    <td><%= h global.gkey %></td>
+	<td><%= h global.gvalue %></td>
+	<td><%= link_to 'edit', url(:controller => 'globals', :action => 'edit', :id => global.id) %></td>
+    <td><%= link_to 'delete', url(:controller => 'globals', :action => 'destroy', :id => global.id) %></td>
+  </tr>
+<% end %>
+</table>
+<p>
+  <%= link_to 'Add new global', url(:controller => 'globals', :action => 'new') %> &nbsp;&nbsp;| &nbsp;
+  <%= link_to 'Back to Admin', url(:controller => "admin") %>
+</p>

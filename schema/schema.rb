@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 4) do
+ActiveRecord::Schema.define(:version => 5) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(:version => 4) do
 
   create_table "categories", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "globals", :force => true do |t|
+    t.string "gkey"
+    t.string "gvalue"
   end
 
   create_table "sessions", :force => true do |t|

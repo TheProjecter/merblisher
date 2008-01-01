@@ -95,6 +95,17 @@ label{
   color: #666;  	
 }
 
+table{
+	margin: 2em 1em 1em;
+	border: 1px solid #888;
+	background-color: #eee;
+}
+
+td, th{
+	padding: 0.3em;
+	border: 1px solid #ccc;
+}
+
 #footer{
 	padding: 1em;
 	text-align: center;
