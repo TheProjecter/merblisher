@@ -1,0 +1,3 @@
+Merblisher is a web publisher developed in Ruby and Merb. It can be used for on-line magazines, presentation web-page for companies or whatever communities.
+I am currently using it for my company page, www.akasha-labs.ro. I've chosen Merb instead of Rails because it requires much less memory and it's also much faster.
+You can find more information about Merb at http://merbivore.com and also on Ezra Zygmuntowicz's (the creator of Merb) blog http://brainspl.at/articles/tag/merb.
